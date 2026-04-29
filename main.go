@@ -14,7 +14,7 @@ import (
 
 const (
 	defaultPort    = 7080
-	defaultHost    = "127.0.0.1"
+	defaultHost    = "0.0.0.0"
 	appName        = "sub2api"
 	appVersion     = "1.0.0"
 )
@@ -49,8 +49,8 @@ func main() {
 		Addr:         addr,
 		Handler:      mux,
 		ReadTimeout:  30 * time.Second,
-		WriteTimeout: 30 * time.Second,
-		IdleTimeout:  60 * time.Second,
+		WriteTimeout: 60 * time.Second,
+		IdleTimeout:  120 * time.Second,
 	}
 
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
