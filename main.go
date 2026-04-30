@@ -49,7 +49,7 @@ func main() {
 		Addr:         addr,
 		Handler:      mux,
 		ReadTimeout:  30 * time.Second,
-		WriteTimeout: 60 * time.Second,
+		WriteTimeout: 90 * time.Second, // increased from 60s; some subscriptions are slow to fetch
 		IdleTimeout:  120 * time.Second,
 	}
 
